@@ -1,10 +1,12 @@
 import './App.css'
+import Header from './components/Header'
+// import SkipContainer from './components/SkipContainer'
 
 function App() {
   return (
     <>
-    <h1 className="bg-sky-900 ">hello skipsize</h1>
-
+      <Header/>
+      {/* <SkipContainer/> */}
     </>
   )
 }
