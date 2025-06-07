@@ -1,0 +1,35 @@
+interface OrderSummaryProps{
+    skip?:Skip
+}
+
+function OrderSummary({skip}:OrderSummaryProps) {
+    if(!skip){
+        return <div className="w-full xl:w-1/4 m-3 p-5 ">
+           <p>Please select a skip</p>
+        </div> 
+    }
+    const imageSource=`${skip.size}-yarder-skip.jpg`
+    return (
+      <div className="w-full xl:w-1/4 m-3 p-5 ">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg  text-center mr-5 bg-stone-100 p-2">
+            <div className="px-6 py-4">
+                <h1 className="font-bold text-2xl mb-2">Order Summary</h1>
+                <img className="w-full h-58" src={imageSource} alt="Sunset in the mountains"/>
+                <h1 className="font-bold text-l mb-2">{skip.size} Yard Skip</h1>
+
+                <p className="text-gray-700 text-base">
+                   {skip.hire_period_days} Days hire period
+                </p>
+                <h1 className=" text-xl font-bold  text-green-600">£{skip.price_before_vat}</h1>
+            </div>
+            <div className="">
+                 <button type="button" className=" w-30 focus:outline-none text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-lg px-5 py-2.5 me-2 mb-2 dark:bg-gray-500 dark:hover:bg-gray-700 dark:focus:ring-gray-500">Back</button>
+                <button type="button" className=" w-30 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-lg px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-700">Continue</button></div>
+        </div>
+  
+      </div>
+    )
+  }
+  
+  export default OrderSummary
+  
