@@ -3,10 +3,11 @@ import apiService from "../apiService";
 import SkipItem from "./SkipItem";
 
 interface SkipContainerProps{
-  skipSelection:(skip:Skip)=>void
+  skipSelectionFunction:(skip:Skip)=>void,
+  selectedSkip:Skip|undefined
 }
 
-function SkipContainer({skipSelection}:SkipContainerProps) {
+function SkipContainer({skipSelectionFunction,selectedSkip}:SkipContainerProps) {
     const[skipDetails,setSkipDetails]=useState([]);
 
     useEffect(()=>{
@@ -24,7 +25,7 @@ function SkipContainer({skipSelection}:SkipContainerProps) {
       {
         skipDetails.map((skipItem:Skip)=>{
            return  <div>
-                <SkipItem key={skipItem.id} item={skipItem} skipSelection={skipSelection}/>
+                <SkipItem key={skipItem.id} item={skipItem} skipSelectionFunction={skipSelectionFunction} selectedSkip={selectedSkip}/>
             </div>
         })
       }

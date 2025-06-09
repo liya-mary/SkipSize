@@ -1,15 +1,25 @@
+import WarningBadge from "./WarningBadge"
 
 interface SkipItemProps{
     item:Skip,
-    skipSelection:(skip:Skip)=>void
+    skipSelectionFunction:(skip:Skip)=>void,
+    selectedSkip:Skip|undefined
 }
 
-function SkipItem({item,skipSelection}:SkipItemProps) {
+function SkipItem({item,skipSelectionFunction,selectedSkip}:SkipItemProps) {
   const imageSource=`${item.size}-yarder-skip.jpg`
     return (
       <div >
-        <div onClick={()=>skipSelection(item)} className="max-w-sm rounded overflow-hidden shadow-lg hover:outline-2 outline-green-300 text-center m-5 bg-stone-100">
-            <img className="w-full h-58" src={imageSource} alt="Sunset in the mountains"/>
+        <div onClick={()=>{skipSelectionFunction(item) }}  className={` relative max-w-sm rounded overflow-hidden shadow-lg hover:outline-2 outline-green-300 text-center m-5 bg-stone-100  ${selectedSkip?.id===item.id? 'outline-2 outline-green-600 ':''}`}>
+            <img className="w-full h-58 " src={imageSource} alt="Sunset in the mountains"/>
+            {!item.allowed_on_road &&
+              <WarningBadge top={1} text="Not Allowed On The Road"/>
+            }
+
+            {!item.allows_heavy_waste &&
+              <WarningBadge top={10} text=" Not Suitable For Heavy Waste" />
+            }
+
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{item.size} Yard Skip</div>
                 <p className="text-gray-700 text-base">

@@ -17,7 +17,7 @@ function App() {
     <>
       <Header/>
       <div className="flex flex-col xl:flex-row gap-4">
-        <SkipContainer skipSelection={onSkipSelection}/>
+        <SkipContainer skipSelectionFunction={onSkipSelection} selectedSkip={selectedSkip}/>
         <OrderSummary skip={selectedSkip}/>
       </div>
     </>
