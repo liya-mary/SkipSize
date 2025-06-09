@@ -12,7 +12,7 @@ function SkipItem({ item, skipSelectionFunction, selectedSkip }: SkipItemProps) 
     <div >
       <div onClick={() => { skipSelectionFunction(item) }} className={`max-w-sm rounded overflow-hidden shadow-lg hover:outline-2 outline-green-300 text-center m-5 bg-stone-100  ${selectedSkip?.id === item.id ? 'outline-2 outline-green-600 ' : ''}`}>
         <div className=" relative">
-          <img className=" w-full h-58 " src={imageSource} alt="Sunset in the mountains" />
+          <img className=" w-full h-58 " src={imageSource} alt="skip" />
           {!item.allowed_on_road &&
             <div className="absolute top-1">
               <WarningBadge text="Not Allowed On The Road" />

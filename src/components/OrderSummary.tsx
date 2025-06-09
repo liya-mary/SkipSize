@@ -18,7 +18,7 @@ function OrderSummary({ skip }: OrderSummaryProps) {
             <div className="sticky top-24 max-w-sm rounded overflow-hidden shadow-lg  text-center mr-5 bg-stone-100 p-2">
                 <div className="px-6 py-4">
                     <h1 className="font-bold text-2xl mb-2">Order Summary</h1>
-                    <img className="w-full h-48" src={imageSource} alt="Sunset in the mountains" />
+                    <img className="w-full h-48" src={imageSource} alt="skip" />
                     <h1 className="font-bold text-l mb-2">{skip.size} Yard Skip</h1>
 
                     <p className="text-gray-700 text-base">
