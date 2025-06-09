@@ -5,20 +5,20 @@ import OrderSummary from './components/OrderSummary'
 import SkipContainer from './components/SkipContainer'
 
 function App() {
-  const [selectedSkip, setSelectedSkip]=useState<Skip|undefined>();
+  const [selectedSkip, setSelectedSkip] = useState<Skip | undefined>();
 
-  function onSkipSelection(skip:Skip){
-    console.log("skip received:, ",skip);
+  function onSkipSelection(skip: Skip) {
+    console.log("skip received:, ", skip);
     setSelectedSkip(skip);
   }
 
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className="flex flex-col xl:flex-row gap-4">
-        <SkipContainer skipSelectionFunction={onSkipSelection} selectedSkip={selectedSkip}/>
-        <OrderSummary skip={selectedSkip}/>
+        <SkipContainer skipSelectionFunction={onSkipSelection} selectedSkip={selectedSkip} />
+        <OrderSummary skip={selectedSkip} />
       </div>
     </>
   )

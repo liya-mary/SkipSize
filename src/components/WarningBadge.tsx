@@ -1,8 +1,8 @@
-interface WarningBadgeProps{
-    text:string
+interface WarningBadgeProps {
+    text: string
 }
 
-function WarningBadge({text}:WarningBadgeProps) {
+function WarningBadge({ text }: WarningBadgeProps) {
     return (
         <div className={` bg-amber-50 border border-amber-200 rounded-lg  ml-1 p-1 rounded-md text-sm flex items-center mx-auto w-59`}>
             <svg viewBox="0 0 24 24" className="text-yellow-600 w-5 h-5 sm:w-5 sm:h-5 mr-3">
@@ -15,7 +15,6 @@ function WarningBadge({text}:WarningBadgeProps) {
             </span>
         </div>
     )
-  }
-  
-  export default WarningBadge
-  
+}
+
+export default WarningBadge
