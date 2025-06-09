@@ -22,15 +22,15 @@ function SkipContainer({ skipSelectionFunction, selectedSkip }: SkipContainerPro
 
 
   return (
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 w-full xl:w-3/4 ">
-        {
-          skipList.map((skipItem: Skip) => {
-            return <div>
-              <SkipItem key={skipItem.id} item={skipItem} skipSelectionFunction={skipSelectionFunction} selectedSkip={selectedSkip} />
-            </div>
-          })
-        }
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 w-full xl:w-3/4 ">
+      {
+        skipList.map((skipItem: Skip) => {
+          return <div>
+            <SkipItem key={skipItem.id} item={skipItem} skipSelectionFunction={skipSelectionFunction} selectedSkip={selectedSkip} />
+          </div>
+        })
+      }
+    </div>
   )
 }
 
